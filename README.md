@@ -1,25 +1,79 @@
-# Ingeniería de Requisitos - Proyecto Caliwood
+Proyecto Caliwood - Sistema de Taquilla de Cine
 
-## 1. Requerimientos Funcionales (RF)
-*   **RF01 (Login):** El sistema debe permitir el acceso mediante el usuario `Cinecali` y la contraseña `Estrenos`. Si es incorrecto, debe mostrar un mensaje de alerta.
-*   **RF02 (Registro de Ventas):** El sistema debe permitir registrar el nombre de la película, la sala y la cantidad de boletas (máximo 10), calculando el total con una tarifa base de $12.000 COP.
-*   **RF03 (Efecto Reloj):** El sistema debe mostrar un efecto visual de carga (reloj) de 1 segundo antes de mostrar el resultado de la recaudación.
-*   **RF04 (Clave de Seguridad):** Tras el cálculo, el sistema solicitará la clave `CINE`. Si es correcta, limpiará los campos. Si es incorrecta, expulsará al usuario al Login.
-*   **RF05 (Cambio de Asiento):** El sistema debe permitir modificar el asiento de un cliente. Si el cambio se realiza entre las 3:00 PM y 6:00 PM (leyendo la hora del sistema), se aplicará un recargo del 5%.
-*   **RF06 (Gráfica):** El sistema debe almacenar las recaudaciones y dibujar una gráfica de líneas dinámica.
-*   **RF07 (Cámara):** El sistema debe permitir tomar una foto al operador mediante la cámara web.
+Hola, este es mi proyecto para el Caso A de la clase de Programación III. Consiste en una página web para gestionar la taquilla de un cine, aplicando HTML, CSS y JavaScript.
+ ¿Qué hace el sistema?
 
-## 2. Requerimientos No Funcionales (RNF)
-*   **RNF01 (Usabilidad):** La interfaz debe ser intuitiva, con alertas claras para guiar al usuario en caso de errores.
-*   **RNF02 (Rendimiento):** La carga de las pantallas y la generación de la gráfica no deben superar los 2 segundos.
-*   **RNF03 (Compatibilidad):** El sistema debe funcionar correctamente en navegadores modernos (Chrome, Edge, Firefox).
+El sistema está dividido en 5 pantallas que simulan el flujo real de un cine:
 
-## 3. Requerimientos de Dominio (RD)
-*   **RD01 (Tratamiento de Datos):** El sistema debe cumplir con la Ley 1481 de 2012 (Habeas Data), garantizando que la captura de foto del operador y el registro de ventas se manejen de forma confidencial y no se compartan con terceros sin consentimiento.
-*   **RD02 (Moneda):** El sistema debe operar exclusivamente en Pesos Colombianos (COP). No se permiten decimales ni monedas extranjeras.
+    Login: El taquillero entra con el usuario Cinecali y la contraseña Estrenos.
 
-## 4. Historias de Usuario
-*   **HU01:** Como *Taquillero*, quiero *iniciar sesión con credenciales seguras* para *evitar que personas no autorizadas manipulen la taquilla*.
-*   **HU02:** Como *Taquillero*, quiero *calcular la recaudación de boletas automáticamente* para *agilizar la atención en la fila*.
-*   **HU03:** Como *Cliente*, quiero *saber si mi cambio de asiento tiene un costo extra* para *decidir si me cambio o no de silla*.
-*   **HU04:** Como *Gerente de Cine*, quiero *ver una gráfica de las ventas del día* para *tomar decisiones sobre qué películas mantener en cartelera*.
+    Ventas: Se registra la película, la sala y la cantidad de boletas (calculando el total a $12.000 c/u). Incluye un efecto de "reloj" al calcular y pide la clave CINE para guardar y limpiar los campos.
+
+    Cambio de Asiento: Permite mover al cliente de silla. Si el cambio se hace entre las 3:00 PM y las 6:00 PM, el sistema lee la hora real del computador y aplica un recargo del 5%.
+
+    Recaudación: Muestra una gráfica de líneas (usando Chart.js) con el dinero total vendido en el día.
+
+    Cámara: Enciende la webcam para tomarle una foto de control al operador.
+
+ Ingeniería de Requisitos
+1. Requerimientos Funcionales (RF)
+
+Son las acciones que el sistema debe realizar para el usuario.
+
+    RF01 (Login): El sistema debe permitir el acceso mediante el usuario Cinecali y la contraseña Estrenos. Si los datos son incorrectos, debe mostrar un mensaje de alerta.
+
+    RF02 (Ventas): El sistema debe calcular la recaudación multiplicando la cantidad de boletas (del 1 al 10) por el precio base de $12.000.
+
+    RF03 (Efecto de carga): El sistema debe mostrar un efecto tipo "reloj" de 1 segundo antes de mostrar el resultado de la venta.
+
+    RF04 (Clave de seguridad): Tras calcular, el sistema debe pedir la palabra CINE. Si es correcta, limpia los campos para la siguiente venta. Si es incorrecta, expulsa al usuario de vuelta al Login.
+
+    RF05 (Cambio de asiento): El sistema debe permitir cambiar el asiento. Si el cambio se hace entre las 3:00 PM y 6:00 PM (leyendo la hora del sistema), aplica un recargo del 5%.
+
+    RF06 (Gráfica): El sistema debe guardar cada venta en un arreglo y dibujarla en una gráfica de líneas.
+
+    RF07 (Cámara): El sistema debe encender la cámara web para capturar la foto del operador.
+
+2. Requerimientos No Funcionales (RNF)
+
+Son las restricciones técnicas y de rendimiento del sistema.
+
+    RNF01 (Usabilidad): La interfaz debe ser intuitiva y las alertas deben explicar claramente al usuario qué error cometió.
+
+    RNF02 (Rendimiento): La carga de las pantallas y la generación de la gráfica no deben tardar más de 2 segundos.
+
+    RNF03 (Compatibilidad): El desarrollo debe funcionar correctamente en navegadores modernos (Chrome, Edge, Firefox).
+
+3. Requerimientos de Dominio (RD)
+
+Son las leyes y normas que el software debe respetar en Colombia.
+
+    RD01 (Tratamiento de datos): El sistema debe cumplir con la Ley 1481 de 2012 (Habeas Data). La foto del operador y los datos de ventas se manejan de forma local y privada.
+
+    RD02 (Moneda): El sistema solo debe operar con pesos colombianos (COP). No se aceptan decimales ni monedas extranjeras (ej. si el usuario intenta poner 5.10, el sistema lo rechaza).
+
+    RD03 (Validación de nombres): Los nombres de las películas deben ser texto. El sistema no debe permitir números en este campo.
+
+4. Historias de Usuario
+
+    HU01: Como taquillero, quiero iniciar sesión de forma segura para evitar que personas ajenas manipulen el sistema.
+
+    HU02: Como taquillero, quiero que el sistema calcule el total de la venta de forma automática para atender más rápido a la fila.
+
+    HU03: Como cliente, quiero saber si cambiarme de silla me cuesta más plata para decidir si lo hago o me quedo en mi puesto.
+
+    HU04: Como administrador del cine, quiero ver una gráfica de las ventas para saber qué película está dando más dinero.
+
+ Tecnologías usadas
+
+    HTML5: Estructura de las 5 pantallas.
+
+    CSS3: Diseño, animaciones (el sol del login) y colores corporativos de Caliwood.
+
+    JavaScript: Lógica de validaciones, cálculos, uso del reloj del sistema y acceso a la cámara.
+
+    Chart.js: Librería para dibujar la gráfica de líneas.
+
+¿Cómo probarlo?
+
+Solo debes descargar la carpeta y abrir el archivo login.html en tu navegador. Todo funciona localmente.
