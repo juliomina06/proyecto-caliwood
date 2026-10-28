@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Caliwood | Recaudación</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../CSS/grafica.css">
+</head>
+<body>
+    <div class="tarjeta-grafica">
+        <h2>RECAUDACIÓN POR FUNCIÓN</h2>
+        <div class="fila-datos">
+            <div class="caja-dato">
+                <span>Total Diario</span>
+                <strong id="total-diario">$0 COP</strong>
+            </div>
+            <div class="caja-dato">
+                <span>Funciones</span>
+                <strong id="total-funciones">0</strong>
+            </div>
+        </div>
+        <div class="contenedor-canvas">
+            <canvas id="miGrafica"></canvas>
+        </div>
+        <button class="btn-volver" onclick="window.location.href='venta.html'">VOLVER A TAQUILLA</button>
+        <button class="btn-volver" onclick="window.location.href='camara.html'">IR A CONTROL DE OPERADOR</button>
+    </div>
+    <script src="../JS/grafica.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Caliwood | Taquilla</title>
+    <link rel="stylesheet" href="../CSS/venta.css">
+</head>
+<body>
+    <div class="tarjeta-venta">
+        <h2>VENTA DE BOLETOS</h2>
+        <label>Película:</label>
+        <input type="text" id="pelicula" placeholder="Ej: Caliwood La Película">
+        
+        <label>Sala:</label>
+        <select id="sala">
+            <option value="Sala 1 (2D)">Sala 1 (2D)</option>
+            <option value="Sala 2 (3D)">Sala 2 (3D)</option>
+            <option value="Sala VIP">Sala VIP</option>
+        </select>
+        
+        <label>Boletas:</label>
+        <div class="contador">
+            <button type="button" onclick="restarBoleta()">−</button>
+            <input type="number" id="cantidad" value="1" readonly>
+            <button type="button" onclick="sumarBoleta()">+</button>
+        </div>
+        
+        <div class="fila-total">
+            <span>Total:</span>
+            <strong id="total-pagar">$12,000 COP</strong>
+        </div>
+        
+        <button class="btn-calcular" onclick="calcularRecaudacion()">CALCULAR RECAUDACIÓN</button>
+        <!-- Botón extra para ir a asientos -->
+        <button class="btn-panel" onclick="window.location.href='asientos.html'">CAMBIO DE ASIENTO</button>
+        <button class="btn-panel" onclick="window.location.href='grafica.html'">BOLETINES PANEL</button>
+</button>
+    </div>
+    <script src="../JS/venta.js"></script>
+</body>
+</html>
