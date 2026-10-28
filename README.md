@@ -1,24 +1,21 @@
 Proyecto Caliwood - Sistema de Taquilla de Cine
 
 Hola, este es mi proyecto para el Caso A de la clase de Programación III. Consiste en una página web para gestionar la taquilla de un cine, aplicando HTML, CSS y JavaScript.
- ¿Qué hace el sistema?
 
+ ¿Qué hace el sistema?
 El sistema está dividido en 5 pantallas que simulan el flujo real de un cine:
 
-    Login: El taquillero entra con el usuario Cinecali y la contraseña Estrenos.
+Login: El taquillero entra con el usuario Cinecali y la contraseña Estrenos.
+Ventas: Se registra la película, la sala y la cantidad de boletas (calculando el total a $12.000 c/u). 
+Incluye un efecto de "reloj" al calcular y pide la clave CINE para guardar y limpiar los campos.
+Cambio de Asiento: Permite mover al cliente de silla. Si el cambio se hace entre las 3:00 PM y las 6:00 PM, 
+el sistema lee la hora real del computador y aplica un recargo del 5%.
+Recaudación: Muestra una gráfica de líneas (usando Chart.js) con el dinero total vendido en el día.
+Cámara: Enciende la webcam para tomarle una foto de control al operador.
 
-    Ventas: Se registra la película, la sala y la cantidad de boletas (calculando el total a $12.000 c/u). Incluye un efecto de "reloj" al calcular y pide la clave CINE para guardar y limpiar los campos.
-
-    Cambio de Asiento: Permite mover al cliente de silla. Si el cambio se hace entre las 3:00 PM y las 6:00 PM, el sistema lee la hora real del computador y aplica un recargo del 5%.
-
-    Recaudación: Muestra una gráfica de líneas (usando Chart.js) con el dinero total vendido en el día.
-
-    Cámara: Enciende la webcam para tomarle una foto de control al operador.
 
  Ingeniería de Requisitos
 1. Requerimientos Funcionales (RF)
-
-Son las acciones que el sistema debe realizar para el usuario.
 
     RF01 (Login): El sistema debe permitir el acceso mediante el usuario Cinecali y la contraseña Estrenos. Si los datos son incorrectos, debe mostrar un mensaje de alerta.
 
@@ -34,9 +31,8 @@ Son las acciones que el sistema debe realizar para el usuario.
 
     RF07 (Cámara): El sistema debe encender la cámara web para capturar la foto del operador.
 
-2. Requerimientos No Funcionales (RNF)
 
-Son las restricciones técnicas y de rendimiento del sistema.
+2. Requerimientos No Funcionales (RNF)
 
     RNF01 (Usabilidad): La interfaz debe ser intuitiva y las alertas deben explicar claramente al usuario qué error cometió.
 
@@ -44,15 +40,15 @@ Son las restricciones técnicas y de rendimiento del sistema.
 
     RNF03 (Compatibilidad): El desarrollo debe funcionar correctamente en navegadores modernos (Chrome, Edge, Firefox).
 
-3. Requerimientos de Dominio (RD)
 
-Son las leyes y normas que el software debe respetar en Colombia.
+3. Requerimientos de Dominio (RD)
 
     RD01 (Tratamiento de datos): El sistema debe cumplir con la Ley 1481 de 2012 (Habeas Data). La foto del operador y los datos de ventas se manejan de forma local y privada.
 
     RD02 (Moneda): El sistema solo debe operar con pesos colombianos (COP). No se aceptan decimales ni monedas extranjeras (ej. si el usuario intenta poner 5.10, el sistema lo rechaza).
 
     RD03 (Validación de nombres): Los nombres de las películas deben ser texto. El sistema no debe permitir números en este campo.
+
 
 4. Historias de Usuario
 
@@ -64,15 +60,13 @@ Son las leyes y normas que el software debe respetar en Colombia.
 
     HU04: Como administrador del cine, quiero ver una gráfica de las ventas para saber qué película está dando más dinero.
 
+
  Tecnologías usadas
 
-    HTML5: Estructura de las 5 pantallas.
-
-    CSS3: Diseño, animaciones (el sol del login) y colores corporativos de Caliwood.
-
-    JavaScript: Lógica de validaciones, cálculos, uso del reloj del sistema y acceso a la cámara.
-
-    Chart.js: Librería para dibujar la gráfica de líneas.
+   HTML5: Estructura de las 5 pantallas.
+   CSS3: Diseño, animaciones (el sol del login) y colores corporativos de Caliwood.
+   JavaScript: Lógica de validaciones, cálculos, uso del reloj del sistema y acceso a la cámara.
+   Chart.js: Librería para dibujar la gráfica de líneas.
 
 ¿Cómo probarlo?
 
