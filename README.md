@@ -1,6 +1,6 @@
 Proyecto Caliwood - Sistema de Taquilla de Cine
 
-Hola, este es mi proyecto para el Caso A de la clase de Programación III. Consiste en una página web para gestionar la taquilla de un cine, aplicando HTML, CSS y JavaScript.
+Hola, este es mi proyecto para el Caso A. Consiste en una página web para gestionar la taquilla de un cine, aplicando HTML, CSS y JavaScript.
 
  ¿Qué hace el sistema?
 El sistema está dividido en 5 pantallas que simulan el flujo real de un cine:
