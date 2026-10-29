@@ -6,11 +6,15 @@ Hola, este es mi proyecto para el Caso A. Consiste en una página web para gesti
 El sistema está dividido en 5 pantallas que simulan el flujo real de un cine:
 
 Login: El taquillero entra con el usuario Cinecali y la contraseña Estrenos.
+
 Ventas: Se registra la película, la sala y la cantidad de boletas (calculando el total a $12.000 c/u). 
 Incluye un efecto de "reloj" al calcular y pide la clave CINE para guardar y limpiar los campos.
+
 Cambio de Asiento: Permite mover al cliente de silla. Si el cambio se hace entre las 3:00 PM y las 6:00 PM, 
 el sistema lee la hora real del computador y aplica un recargo del 5%.
+
 Recaudación: Muestra una gráfica de líneas (usando Chart.js) con el dinero total vendido en el día.
+
 Cámara: Enciende la webcam para tomarle una foto de control al operador.
 
 
