@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caliwood | Cambio de Asiento</title>
+    <link rel="stylesheet" href="../CSS/asientos.css">
+</head>
+<body>
+
+    <div class="tarjeta-asiento">
+        <h2>CAMBIO DE ASIENTO</h2>
+
+        <!-- Asiento Actual -->
+        <label>Asiento actual:</label>
+        <input type="text" id="asiento-actual" placeholder="Ej: B12">
+
+        <!-- Nuevo Asiento -->
+        <label>Nuevo asiento:</label>
+        <input type="text" id="nuevo-asiento" placeholder="Ej: F08">
+
+        <label>Hora del sistema (Automática):</label>
+<div id="reloj-sistema" style="font-weight: bold; font-size: 18px; color: #C1121F; padding: 10px 0;">
+    Cargando hora...
+</div>
+
+        
+        <div id="caja-recargo" class="nota-recargo oculto">
+            ⚠️ Nota: Se aplicará un recargo del 5% por cambio de zona.
+        </div>
+
+        <!-- Resultado del cálculo -->
+        <div class="fila-total">
+            <span>Total a pagar:</span>
+            <strong id="total-asiento">$12,000 COP</strong>
+        </div>
+
+        
+        <div class="botones">
+            <button class="btn-confirmar" onclick="confirmarCambio()">CONFIRMAR</button>
+            <button class="btn-cancelar" onclick="window.location.href='venta.html'">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="../JS/asientos.js"></script>
+</body>
+</html>

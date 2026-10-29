@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es"></html>>
+<head>
+    <meta charset="UTF-8">
+    <title>Caliwood | Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body>
+    <main class="escena-login">
+        <section class="tarjeta-login">
+            <header class="zona-logo">
+                <div class="sol-carrete"></div>
+                <span class="palmera palmera-izq">🌴</span>
+                <h1 class="letrero">CALIWOOD</h1>
+                <span class="palmera palmera-der">🌴</span>
+                <p class="tagline">El Hollywood de Cali</p>
+            </header>
+            <form class="formulario" onsubmit="return false;">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" class="campo" placeholder="Cinecali">
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" class="campo" placeholder="Estrenos">
+                <button type="button" class="boton-ingresar" onclick="ingresar()">INGRESAR</button>
+                <p id="mensaje" class="mensaje-error" role="alert"></p>
+            </form>
+        </section>
+    </main>
+    <script src="../JS/login.js"></script>
+</body>
+</html>
