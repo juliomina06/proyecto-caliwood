@@ -68,8 +68,11 @@ Cámara: Enciende la webcam para tomarle una foto de control al operador.
  Tecnologías usadas
 
    HTML5: Estructura de las 5 pantallas.
+   
    CSS3: Diseño, animaciones (el sol del login) y colores corporativos de Caliwood.
+   
    JavaScript: Lógica de validaciones, cálculos, uso del reloj del sistema y acceso a la cámara.
+   
    Chart.js: Librería para dibujar la gráfica de líneas.
 
 ¿Cómo probarlo?
